@@ -18,7 +18,7 @@ const reactSchema = new Schema({
       createdAt: {
         type: Date,
         default: Date.now,
-      },
+      }
     });
   
 module.exports = reactSchema;
