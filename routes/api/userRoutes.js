@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getUsers, getSingleUser, createUser, updateUser, deleteUser } = require('../../controllers/userController.js');
+const { getUsers, getSingleUser, createUser, updateUser, deleteUser, addFriend, deleteFriend } = require('../../controllers/userController.js');
 
 // Route for /api/users
 router.route('/')
@@ -9,12 +9,13 @@ router.route('/')
 // Route for /api/user/:userId (ObjectId / ID for User)
 router.route('/:userId')
   .get(getSingleUser)   // Get SINGLE User
-  .put(updateUser)      // Update User (Add Friend)
+  .put(updateUser)      // Update User
   .delete(deleteUser);  // Delete User
 
+// Route for /api/user/:userId/friends/:friendId (Add & Delete friend from user)
 router.route('/:userId/friends/:friendId')
-  .post((req, res) => res.send("Route not yet implemented"))
-  .delete((req, res) => res.send("Route not yet implemented"))
+  .post(addFriend)      // Add a friend
+  .delete(deleteFriend) // Delete a friend
 
-  
+
 module.exports = router;
