@@ -28,21 +28,24 @@ git clone git@github.com:CLTJared/Social-Network-API.git
 * MongoDB
     * See [MongoDB Installation](https://www.mongodb.com/docs/manual/installation/) and select your platform for instructions on installing
 
-#### Routes
-User Routes
+### Usage
+User Routes - `localhost:3001/api/users/`
 * **GET**: View single user - `localhost:3001/api/users/:userId`
 * **POST**: Create new user = `localhost:3001/api/users`
     ```json
     {
-        "username": "yourusername",
+        "username": "your-username",
+        "email": "your-email",
         "thoughts": ["optional"],
-        "friends": ["optional"] 
+        "friends": ["optional"]
     }
     ```
-* **PUT**: Add Friend - `localhost:3001/api/users/:userId/friend/:friendId`
-* **DELETE**: Delete Friend - `localhost:3001/api/users/:userId/friend/:friendId`
+* **PUT**: Add Friend - `localhost:3001/api/users/:userId/friends/:friendId`
+* **DELETE**: Delete Friend - `localhost:3001/api/users/:userId/friends/:friendId`
 
-`localhost:3001/api/thought`
+----
+
+Thought Routes - `localhost:3001/api/thought`
 * GET: `:thoughtId` - Single thought
 * POST: Create New Thought
     ```json
