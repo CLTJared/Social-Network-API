@@ -30,8 +30,8 @@ git clone git@github.com:CLTJared/Social-Network-API.git
 
 #### Routes
 User Routes
-* **GET**: View single user - `localhost:3001/api/user/:userId`
-* **POST**: Create new user = `localhost:3001/api/user`
+* **GET**: View single user - `localhost:3001/api/users/:userId`
+* **POST**: Create new user = `localhost:3001/api/users`
     ```json
     {
         "username": "yourusername",
@@ -39,8 +39,8 @@ User Routes
         "friends": ["optional"] 
     }
     ```
-* **PUT**: Add Friend - `localhost:3001/api/user/:userId/friend/:friendId`
-* **DELETE**: Delete Friend - `localhost:3001/api/user/:userId/friend/:friendId`
+* **PUT**: Add Friend - `localhost:3001/api/users/:userId/friend/:friendId`
+* **DELETE**: Delete Friend - `localhost:3001/api/users/:userId/friend/:friendId`
 
 `localhost:3001/api/thought`
 * GET: `:thoughtId` - Single thought
