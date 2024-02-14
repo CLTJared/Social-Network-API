@@ -4,10 +4,17 @@ const { Schema, model } = require('mongoose');
 const userSchema = new Schema(
   {
     username: { 
-        String, 
+        type: String, 
         unique: true, 
         required: true, 
-        trim: true 
+        trim: true,
+    },
+    email: {
+      type: String,
+      unique: true,
+      required: true,
+      trim: true,
+      // Needs match? or validate? to come..
     },
     thoughts: [
         {
@@ -34,13 +41,13 @@ const userSchema = new Schema(
   }
 );
 
-// Increases friend count in User model object when friends are added by a user
+// Creates virtual column that checks the friends array and sets its length value to the virtual column
 userSchema.virtual("friendCount").get(function () {
     return this.friends.length;
   });
 
 
-// Initialize `thought` model
+// Initialize `user` model
 const User = model('user', userSchema);
 
 module.exports = User;

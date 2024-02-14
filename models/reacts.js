@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 const reactSchema = new Schema({
     reactionId: {
@@ -19,3 +19,5 @@ const reactSchema = new Schema({
         default: Date.now,
       },
     });
+  
+module.exports = reactSchema;

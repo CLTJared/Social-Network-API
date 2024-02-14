@@ -4,18 +4,18 @@ const reacts = require('./reacts');
 // Create `thought` Schema
 const thoughtSchema = new Schema(
   {
-    user_id: {
+    username: {
         type: String,
     },
     createdAt: {
       type: Date,
       default: Date.now,
     },
-    react: [reacts], // Importing react schema
-    text: {
+    reactions: [reacts], // Importing react schema
+    thoughtText: {
       type: String,
-      minLength: 5,
-      maxLength: 250,
+      minLength: 1,
+      maxLength: 280,
     },
   },
   {
@@ -28,13 +28,13 @@ const thoughtSchema = new Schema(
 
 // Virtual Column `reactCount` is count of reacts per thought
 thoughtSchema
-  .virtual('reactCount')
+  .virtual('reactionCount')
   // Getter
   .get(function () {
-    return this.react.length;
+    return this.reactions.length;
   });
 
 // Initialize `thought` model
-const Thought = model('thought', postSchema);
+const Thought = model('thought', thoughtSchema);
 
 module.exports = Thought;
