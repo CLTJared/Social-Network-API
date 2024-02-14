@@ -1,6 +1,7 @@
 const { connect, connection } = require('mongoose');
 
-const connectionString = 'mongodb://127.0.0.1:27017/studentsDB';
+//If connect using .env (dotenv) or to local
+const connectionString = process.env.MONGODB || 'mongodb://127.0.0.1:27017/socialDB';
 
 connect(connectionString);
 
