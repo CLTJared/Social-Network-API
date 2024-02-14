@@ -7,16 +7,19 @@ const connection = require("../config/connection");
   const users = [
     {
       username: "JaredUNCC",
+      email: "jared@edx-bootcamp.com",
       thoughts: [],
       friends: []
     },
     {
       username: "RogerEDX",
+      email: "roger@edx-bootcamp.com",
       thoughts: [],
       friends: []
     },
     {
       username: "SashaEDX",
+      email: "sasha@edx-bootcamp.com",
       thoughts: [],
       friends: []
     },
