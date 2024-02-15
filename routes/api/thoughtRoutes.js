@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getThoughts, createThought, getSingleThought, updateThought, deleteThought, createReaction } = require('../../controllers/thoughtController.js');
+const { getThoughts, createThought, getSingleThought, updateThought, deleteThought, createReaction, deleteReaction } = require('../../controllers/thoughtController.js');
 
 // Route for /api/thoughts
 router.route('/')
@@ -15,6 +15,6 @@ router.route('/:thoughtId/reactions')
     .post(createReaction)                                           // Create new reaction to thought
 
 router.route('/:thoughtId/reactions/:reactionId')
-    .delete((req, res) => res.send("Route not yet implemented"))    // Delete reaction
+    .delete(deleteReaction)                                         // Delete reaction
 
 module.exports = router;
