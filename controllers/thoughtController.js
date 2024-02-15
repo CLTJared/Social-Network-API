@@ -35,6 +35,24 @@ module.exports = {
         }
       },
 
+      async updateThought(req, res) {   // Get all users
+        try {
+          const thoughts = await Thought.findOneAndUpdate(
+            { _id: req.params.thoughtId },
+            { $set: req.body },
+            { runValidators: true, new: true }
+          );
+
+          if (!thoughts) {
+            return res.status(404).json({ message: 'No thoughts with this id found.' });
+          }
+
+          res.json(thoughts);
+        } catch (err) {
+          res.status(500).json(err);
+        }
+      },
+
       async deleteThought(req, res) {   // Get all users
         try {
           const thoughts = await Thought.findOneAndDelete({ _id: req.params.thoughtId });
@@ -48,4 +66,6 @@ module.exports = {
           res.status(500).json(err);
         }
       },
+
+      
 }
