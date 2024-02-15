@@ -59,7 +59,6 @@ Thought Routes - `localhost:3001/api/thoughts`
 * 
 
 ### Screenshot
+![Insomnia](./insomnia-get-users.jpg)
 
 ### Demo
-
-## Questions / Feedback
