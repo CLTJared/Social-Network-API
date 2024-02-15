@@ -32,12 +32,12 @@ git clone git@github.com:CLTJared/Social-Network-API.git
 User Routes - `localhost:3001/api/users/`
 * **GET**: View single user - `localhost:3001/api/users/:userId`
 * **POST**: Create new user = `localhost:3001/api/users`
+* **PUT**: Update user information = `localhost:3001/api/users/:userId`
     ```json
+    //example json load
     {
         "username": "your-username",
-        "email": "your-email",
-        "thoughts": ["optional"],
-        "friends": ["optional"]
+        "email": "your-email"
     }
     ```
 * **PUT**: Add Friend - `localhost:3001/api/users/:userId/friends/:friendId`
@@ -45,12 +45,15 @@ User Routes - `localhost:3001/api/users/`
 
 ----
 
-Thought Routes - `localhost:3001/api/thought`
+Thought Routes - `localhost:3001/api/thoughts`
 * GET: `:thoughtId` - Single thought
 * POST: Create New Thought
     ```json
+    //example json load
     {
-        xxxx
+        "thoughtText": "Here's a cool thought...",
+        "username": "JaredUNCC",
+        "userId": "65cc23181a85e9e9536ec572"
     }
     ```
 * 
