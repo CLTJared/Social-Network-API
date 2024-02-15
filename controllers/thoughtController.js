@@ -69,7 +69,7 @@ module.exports = {
 
       async createReaction(req, res) {
         try {
-            const thoughts = await Thought.findOneAndUpdate(
+            const thoughts = await Thought.findOneAndUpdate( //Update is used so that we update the thought record with the reaction
                 { _id: req.params.thoughtId }, // Find the thought by it's ID provided
                 { $addToSet: { reactions: req.body } }, // Add to `reactions` the request body contents
                 { runValidators: true, new: true }
@@ -88,7 +88,7 @@ module.exports = {
 
       async deleteReaction(req, res) {
         try {
-            const thoughts = await Thought.findOneAndDelete(
+            const thoughts = await Thought.findOneAndUpdate( //Update is used so we only remove the reaction, not the thought & reaction
                 { _id: req.params.thoughtId }, // Find the thought by it's ID provided
                 { $pull: { reactions: req.params.reactionId } }, // Find the reaction in that specific thought and `pull` it
                 { runValidators: true, new: true }
